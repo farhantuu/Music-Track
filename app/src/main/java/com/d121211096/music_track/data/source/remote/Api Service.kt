@@ -8,8 +8,7 @@ interface ApiService {
     @GET("lyrics/search")
     suspend fun getMusic(
         @Query("q") q: String,
-        @Query("from") from: String,
-        @Query("sortBy") sortBy: String,
-        @Query("apiKey") apiKey: String = "b20c0ec3d33f4ed599f61e82a2a7484e"
+        @Query("text_only") text_only: Boolean,
+        @Query("limit") limit: Int,
     ): GetMusicResponse
 }
